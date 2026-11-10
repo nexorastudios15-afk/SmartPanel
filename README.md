@@ -1,54 +1,113 @@
-# Smart Panel
+lNEXORA SmartPanel
 
-Panel aplikasi melayang di tepi layar untuk Android 7 sampai 15 (ARM 32-bit dan 64-bit). Dibuat oleh Nexora.
+Alternative Edge Panel for Android — Bring quick app access to devices without a built-in Smart Panel.
 
-## Cara dapat APK
+NEXORA SmartPanel adalah aplikasi Android yang menghadirkan panel aplikasi di sisi layar sebagai alternatif untuk perangkat yang tidak memiliki fitur Smart Panel bawaan atau memiliki fitur panel yang terbatas.
 
-### Opsi A: lewat GitHub Actions
-1. Upload **seluruh isi folder ini** ke repo GitHub (termasuk folder `.github`).
-2. Tab **Actions** > **Build APK** > **Run workflow**.
-3. Download artifact **SmartPanel-APK**. Isinya `app-release.apk` dan `app-debug.apk`.
+Dengan SmartPanel, pengguna dapat mengakses aplikasi favorit melalui sebuah handle kecil di tepi layar. Cukup geser handle ke dalam untuk membuka panel tanpa harus meninggalkan aplikasi yang sedang digunakan.
 
-### Opsi B: Android Studio
-File > Open > pilih folder ini > Build > Build APK(s).
+Aplikasi ini dikembangkan oleh NEXORA dengan fokus pada kemudahan akses, multitasking, kustomisasi, dan kompatibilitas lintas perangkat Android.
 
-## Cara pakai
-1. Buka aplikasi dan beri izin (wajib: Tampil di atas aplikasi lain), lalu nyalakan panel.
-2. Garis kecil muncul di tepi layar. Geser naik-turun untuk pindah posisi, geser ke dalam untuk buka panel.
-3. Di panel, tekan dan geser garis paling atas untuk pindah ke kiri atau kanan.
-4. Tombol **+** di panel membuka daftar aplikasi mengambang di samping panel, tanpa keluar dari aplikasi yang sedang dipakai. Scroll atas-bawah, ikon di tengah paling besar. Ketuk ikon untuk menambah atau melepas. Ketuk centang atau di luar daftar untuk menutup.
-5. Lebar panel bisa diisi angka (dp). Kosong berarti otomatis mengikuti DPI.
+✨ Fitur Utama
 
-## Mode buka aplikasi
-- **Auto**: ketuk ikon = layar penuh, ketuk logo freeform kecil di ikon = mengambang.
-- **Layar penuh**: ketuk ikon = layar penuh.
-- **Freeform**: ketuk ikon = langsung mengambang. Hanya aktif kalau HP mendukung freeform.
+- Edge Panel: Panel aplikasi yang dapat dibuka melalui handle di tepi layar.
+- Quick App Access: Tambahkan aplikasi favorit ke dalam panel untuk akses lebih cepat.
+- Floating App List: Buka daftar aplikasi melalui tombol tambah tanpa keluar dari aplikasi aktif.
+- Custom Position: Atur posisi panel di sisi kiri atau kanan layar.
+- Adjustable Width: Sesuaikan lebar panel secara manual atau gunakan pengaturan otomatis berdasarkan ukuran layar.
+- Multiple Launch Modes: Tersedia mode Auto, Fullscreen, dan Freeform.
+- Running App Indicator: Tandai aplikasi yang dibuka melalui panel.
+- App Close Button: Tombol untuk menutup aplikasi yang dibuka melalui panel.
+- Shizuku Integration: Mendukung Shizuku untuk fungsi penutupan aplikasi dengan izin tambahan.
+- Auto Start: Panel dapat dijalankan otomatis ketika perangkat dinyalakan.
+- Keep Alive: Mencoba menghidupkan kembali panel jika dihentikan sistem.
+- Custom Theme: Pilihan tema mengikuti sistem, hitam, dan putih.
+- Minimal Interface: Tampilan sederhana dan berfokus pada fungsi.
 
-## Kill seperti Recents (butuh Shizuku)
-Android tidak mengizinkan aplikasi biasa menutup aplikasi lain yang masih tampil. Tombol x di panel memakai **Shizuku** (gratis) untuk menghapus task aplikasi dari Recents lalu mematikan prosesnya.
-1. Pasang Shizuku dari Play Store.
-2. Jalankan lewat Debugging nirkabel (Android 11 ke atas). Android 7 sampai 10 harus lewat komputer (adb).
-3. Di Smart Panel, bagian "Tutup aplikasi", tekan Izinkan.
+🚀 Mode Pembukaan Aplikasi
 
-Tanpa Shizuku, tombol x hanya bisa mematikan aplikasi yang sudah di latar belakang.
+1. Auto
 
-## Otomatis
-- **Jalan saat HP menyala**: panel hidup sendiri setelah restart.
-- **Hidupkan lagi kalau dimatikan**: kalau panel ke-kill atau dihapus dari Recents, nyala lagi sendiri.
-- Di HP Tecno, Infinix, itel, Xiaomi, Oppo, Vivo, izinkan juga "Mulai otomatis" / "Autostart" di pengaturan HP.
+Membuka aplikasi dalam mode layar penuh secara default. Jika Freeform tersedia, pengguna dapat memilih opsi mengambang melalui ikon Freeform.
 
-## Aktifkan freeform (HP yang belum support)
-1. Unduh Brevent dari Play Store.
-2. Hubungkan lewat debugging nirkabel.
-3. Di Brevent, buka menu titik tiga, cari menu untuk menjalankan perintah, lalu masukkan:
-```
-settings put global enable_freeform_support 1
-settings put global force_resizable_activities 1
-```
-4. Restart HP.
+2. Fullscreen
 
-Kalau setelah itu freeform tetap tidak aktif, HP tidak mendukungnya dan mode Freeform tidak bisa dipakai.
+Membuka aplikasi secara langsung dalam tampilan layar penuh.
 
-## Catatan teknis
-- minSdk 24 (Android 7.0), targetSdk 35 (Android 15). Aplikasi murni Java/Kotlin tanpa library native, jadi jalan di ABI ARM mana pun (`armeabi-v7a`, `arm64-v8a`). `armeb` bukan ABI Android.
-- Tema hanya hitam dan putih, bisa ikut mode gelap HP atau dikunci.
+3. Freeform
+
+Membuka aplikasi dalam jendela mengambang. Fitur ini bergantung pada dukungan Freeform dari perangkat dan sistem Android.
+
+⚙️ Persyaratan dan Izin
+
+- Android 7.0 sampai Android 15 menjadi rentang versi yang ditargetkan proyek ini.
+- Izin Display over other apps diperlukan untuk menampilkan panel di atas aplikasi lain.
+- Izin notifikasi dapat diperlukan agar layanan panel tetap berjalan di latar belakang pada Android versi tertentu.
+- Pengaturan pengecualian optimasi baterai bersifat opsional.
+- Shizuku bersifat opsional dan diperlukan untuk kemampuan penutupan aplikasi tingkat lanjut.
+- Freeform bergantung pada kemampuan sistem dan perangkat masing-masing.
+
+📱 Kompatibilitas
+
+SmartPanel dibuat sebagai alternatif untuk berbagai perangkat Android, termasuk perangkat yang tidak memiliki Smart Panel bawaan.
+
+Namun, kompatibilitas tidak dapat dijamin pada seluruh merek, model, ROM, dan versi Android.
+
+Beberapa fungsi mungkin tidak tersedia atau berperilaku berbeda tergantung pada:
+
+- Versi Android.
+- Kebijakan sistem dan ROM perangkat.
+- Dukungan overlay.
+- Dukungan Freeform atau multi-window.
+- Pembatasan aktivitas latar belakang.
+- Pengelolaan baterai dari produsen perangkat.
+
+Catatan: Jika perangkat tidak mendukung Freeform, mode Auto dan Fullscreen tetap dapat digunakan selama izin dan fungsi dasar aplikasi didukung.
+
+🔧 Instalasi dan Pengaturan
+
+1. Unduh dan instal APK SmartPanel.
+2. Buka aplikasi.
+3. Berikan izin Display over other apps.
+4. Aktifkan SmartPanel melalui tombol yang tersedia.
+5. Tambahkan aplikasi favorit.
+6. Pilih posisi panel kiri atau kanan.
+7. Atur mode pembukaan aplikasi sesuai kebutuhan.
+8. Geser handle di tepi layar ke arah dalam untuk membuka panel.
+
+Mengaktifkan Freeform
+
+Pada perangkat yang belum mengaktifkan Freeform, proyek menyediakan panduan menggunakan Brevent dan pengaturan sistem. Keberhasilannya tetap bergantung pada dukungan perangkat.
+
+Integrasi Shizuku
+
+Shizuku dapat digunakan untuk memberikan kemampuan tambahan dalam menutup aplikasi. Tanpa Shizuku, beberapa fungsi penutupan aplikasi memiliki keterbatasan karena pembatasan Android.
+
+⚠️ Batasan
+
+- SmartPanel bukan pengganti sistem Smart Panel bawaan secara langsung.
+- Tidak semua perangkat kompatibel.
+- Freeform tidak tersedia pada semua perangkat.
+- Beberapa fitur memerlukan izin tambahan.
+- Sistem penghemat baterai dapat menghentikan layanan panel.
+- Pengalaman penggunaan dapat berbeda antarperangkat.
+
+🛠️ Teknologi
+
+- Kotlin
+- Android SDK
+- Gradle
+- Shizuku API
+- Android Overlay Service
+
+👨‍💻 Developer
+
+NEXORA
+
+SmartPanel dikembangkan sebagai proyek alternatif untuk memperluas akses multitasking pada perangkat Android yang tidak memiliki fitur panel aplikasi bawaan.
+
+❤️ Support
+
+Jika SmartPanel bermanfaat untuk perangkatmu, dukung pengembangan proyek ini agar dapat terus diperbarui dan ditingkatkan.
+
+NEXORA — Make Android More Flexible.

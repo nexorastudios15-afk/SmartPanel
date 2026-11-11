@@ -1,4 +1,4 @@
-lNEXORA SmartPanel
+SmartPanel
 
 Alternative Edge Panel for Android — Bring quick app access to devices without a built-in Smart Panel.
 

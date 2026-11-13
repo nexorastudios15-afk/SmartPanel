@@ -18,30 +18,6 @@ Dibuat oleh **Nexora**.
 - **Tutup aplikasi:** ketuk aplikasi yang sedang dibuka dalam mode freeform untuk menutupnya. Penutupan task penuh memerlukan Shizuku.
 - **Mulai otomatis:** tersedia opsi menjalankan panel setelah HP menyala dan menghidupkannya kembali jika dihentikan.
 
-## Cara mendapatkan APK
-
-### Opsi A — GitHub Actions
-
-1. Upload seluruh isi folder proyek ke repository GitHub. Pastikan folder `.github/workflows` ikut diunggah.
-2. Buka tab **Actions**.
-3. Pilih workflow **Build APK**, lalu tekan **Run workflow**.
-4. Setelah proses selesai, unduh artifact **SmartPanel-APK**.
-5. Artifact berisi:
-   - `app-debug.apk`
-   - `app-release.apk`
-
-Workflow juga berjalan otomatis saat ada push ke branch `main` atau `master`.
-
-### Opsi B — Android Studio
-
-1. Buka Android Studio.
-2. Pilih **File > Open**, lalu pilih folder proyek `SmartPanel`.
-3. Tunggu Gradle Sync selesai.
-4. Pilih **Build > Build Bundle(s) / APK(s) > Build APK(s)**.
-5. APK hasil build tersedia di folder `app/build/outputs/apk/`.
-
-> Build release pada konfigurasi proyek ini menggunakan debug signing key. APK dapat dipasang untuk pengujian, tetapi bukan konfigurasi signing untuk distribusi publik jangka panjang.
-
 ## Cara menggunakan
 
 1. Pasang dan buka Smart Panel.

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Selalu putih-hitam. Tidak ada varian values-night, dan Dark Mode paksa dimatikan. -->
+    <style name="Theme.SmartPanel" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">#FFFFFF</item>
+        <item name="android:colorAccent">#000000</item>
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+</resources>
